@@ -30,6 +30,10 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(dirs.assetsDir, 'index.html'));
 });
 
+app.get('/apic', (req, res) => {
+  res.send('a');
+});
+
 app.post('/data', (req, res) => {
   console.log(req.body);
 });
@@ -61,9 +65,9 @@ io.on('connection', function (socket) {
         sendSckt('c');
       }
 
-      io.emit('btnclick', { server: 1, ...data });
-    // socket.broadcast.emit('btnclick', { serevr: 1, ...data });
-  });
+      io.emit('btnclick',  { server: 1, ...data });
+
+    });
 
   socket.on('checkstatus', function (data) {
     console.log(data);  
