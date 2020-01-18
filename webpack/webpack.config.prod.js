@@ -27,22 +27,18 @@ var config = {
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/, //check for all js files
+                test: /\.(js)$/, //check for all js files
                 exclude: /(node_modules)/,
                 loader: 'babel-loader',
                 options: {
                     babelrc: false,
-                    presets: ['@babel/preset-env', '@babel/preset-react'],
+                    presets: ['@babel/preset-env'],
                     plugins: ['@babel/plugin-proposal-function-bind', '@babel/plugin-proposal-class-properties'],
                 },
             }
         ]
     },
-    resolve: {
-        alias: {
-            'react-dom': '@hot-loader/react-dom'
-        }
-    },
+
     devtool: "hidden-source-map"
 };
 

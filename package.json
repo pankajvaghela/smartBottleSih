@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon -r esm server/app.js",
-    "startn": "node -r esm server/app.js",
+    "start": "node -r esm server/app.js",
+    "startn": "nodemon -r esm server/app.js",
     "startb": "babel-node server/app.js",
     "clean": "rimraf node_modules && rimraf dist && npm install",
     "lint": "eslint client server; exit 0"
