@@ -1,7 +1,7 @@
 var dgram = require('dgram');
 var client = dgram.createSocket('udp4');
 
-var port = 44044;
+var port = 44000;
 
 client.on('message', function (msg, info){
     console.log(msg.toString());

@@ -12,6 +12,8 @@ import dirs from './directory';
 
 const app = express();
 
+app.set('view engine', 'ejs');
+
 require('dotenv').config();
 const APP_PORT = process.env.PORT || (process.env.APP_PORT || 3000);
 
