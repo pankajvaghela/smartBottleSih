@@ -12,7 +12,7 @@ let serverIp = 'localhost';
 let serverPort = '80';
 
 app.get('/', (req, res) => {
-    res.redirect(`http://${serverIp}:${serverPort}`);
+    res.redirect(`http://${serverIp}:${serverPort}/hospital`);
 });
 
 
