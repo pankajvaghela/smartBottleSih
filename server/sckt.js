@@ -4,13 +4,11 @@ var ip = require("ip");
 import { EVENTS } from './nodesManager';
 import eventBus from './eventBus';
 
-
-var port = 44000;
+var port = 44044;
 
 export const sendSckt = function(msg = 'o', ip='192.168.43.213', port = 4220){
     client.send(msg,0, 12, port, ip );    
 } 
-
 
 client.on('message', function (msg, info){
     let msgstr = msg.toString();

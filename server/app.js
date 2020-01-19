@@ -148,6 +148,7 @@ import Axios from 'axios';
 // Landing page
 app.get('/', (req, res) => {
   res.render('contents/home');
+  // res.sendFile(path.join(dirs.assetsDir, 'index2.html'));
 });
 
 app.get('/apic', (req, res) => {
@@ -172,7 +173,7 @@ app.post('/data', (req, res) => {
 
 
 
-server.listen(app.get('port'), app.get('host'), () => {
+app.listen(app.get('port'), app.get('host'), () => {
     console.log(`Server running at http://${app.get('host')}:${app.get('port')}`);
     
     try{
