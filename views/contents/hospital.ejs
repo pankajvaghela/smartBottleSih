@@ -1,0 +1,18 @@
+<%- include('../header') -%>
+
+<div class="wardGrid">
+
+<% for(var i=0; i<9; i++) { %>
+  <div class="wardBox" id= "<%= i %>">
+
+    <div class="wardNo">
+      <h2><a href=/wardno?id=<%= i %> >WARD# <%= i+1%></a></h2>
+    </div>
+
+  </div>
+
+  <% } %>
+
+</div>  
+
+<%- include('../footer') -%>

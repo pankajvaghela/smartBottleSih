@@ -8,7 +8,6 @@ import {sendSckt, addScktListener} from './sckt';
 var server = require('http').Server(app);
 var io = require('socket.io')(server, { origins: '*:*'});
 
-
 // import webpack from 'webpack';
 // import webpackDevMiddleware from 'webpack-dev-middleware';
 // import webpackHotMiddleware from 'webpack-hot-middleware';
@@ -30,19 +29,30 @@ import eventBus from './eventBus';
 
 // Landing page
 app.get('/', (req, res) => {
-  console.log("ok");
-  
-  res.redirect("http://google.com");
-  // res.sendFile(path.join(dirs.assetsDir, 'index.html'));
+  res.render('contents/home');
 });
 
 app.get('/apic', (req, res) => {
   res.send('a');
 });
 
+app.get("/wardno\*", function(req, res){
+  res.render('contents/ward', {patient : patient[req.query.id]});
+});
+
+app.get('/hospital', (req, res) => {
+  res.render('contents/hospital');
+});
+
+app.get('/developer', (req, res) => {
+  res.render('contents/developer');
+});
+
 app.post('/data', (req, res) => {
   console.log(req.body);
 });
+
+
 
 server.listen(app.get('port'), app.get('host'), () => {
     console.log(`Server running at http://${app.get('host')}:${app.get('port')}`);
