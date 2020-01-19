@@ -192,11 +192,10 @@ server.listen(app.get('port'), app.get('host'), () => {
     console.log(`Server running at http://${app.get('host')}:${app.get('port')}`);
     
     try{
-      
-      // Axios.post("https://sbsih.herokuapp.com/changehostip", {
-      //   ip: myIP,
-      //   port
-      // });
+      Axios.post("https://sbsih.herokuapp.com/changehostip", {
+        ip: myIP,
+        port : app.get('port')
+      });
     }
     catch(err){
       console.error("GG", err);
