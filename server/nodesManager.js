@@ -5,6 +5,7 @@ export const EVENTS = {
     UPDATE_STATUS : 'updatestatus'
 }
 
+
 let nodes = {};
 
 eventBus.on(EVENTS.NEWCONNECT, function (ip) {
