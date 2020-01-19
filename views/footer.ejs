@@ -15,9 +15,70 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="JS\main.js" charset="utf-8"></script>
+  <!-- <script src="<%= res.locals.myIP -%>/JS/main.js" charset="utf-8"></script> -->
   
   
+  <script src="/socket.io/socket.io.js"></script>
+<script>
+
+
+  var socket = io.connect(location.href);  
+
+  
+
+    socket.on('statusr', function (data) {
+        console.log(data);
+        document.getElementById("checkr").innerHTML = data.r;
+
+    });
+
+    socket.on('statusnew', function (data) {
+        console.log("status new",data);
+        let status = data.val;
+        let myBW = document.getElementById("01");
+
+        let bg, fg = '';
+
+        // myBW.querySelectorAll('.bedNo');
+
+        switch(status){
+          case "0" :
+            bg = "red";
+            fg = "white";
+            break;
+          case "1" :
+            bg = "yellow";
+            fg = "green";
+            break;
+          case "2" :
+            bg = "green";
+            fg = "yellow";
+            break;
+        }
+
+        myBW.style.backgroundColor = bg ;
+        myBW.style.color = fg ;
+
+    });
+
+    socket.on('newconnect', function (data) {
+        console.log(data);
+        // document.getElementById("checkr").innerHTML = "new Connect " + data.ip;
+    });
+
+    
+</script>
+
+<script>
+
+  function oncheckstatus(s){
+        socket.emit(`checkstatus`, { s });
+  }
+
+
+    
+</script>
+
 
 </body>
   

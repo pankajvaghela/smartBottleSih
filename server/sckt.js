@@ -20,9 +20,9 @@ client.on('message', function (msg, info){
         eventBus.emit(EVENTS.UPDATE_STATUS,{ip : info.address, status : msgstr }, info.address, msgstr);
         sendSckt('1',info.address);
     }
-    console.log(msg.toString());
-    console.log(msg);
-    console.log(info);
+    console.log(msg.toString(),info);
+    // console.log(msg);
+    // console.log(info);
 });
 
 
