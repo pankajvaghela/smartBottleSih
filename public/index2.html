@@ -116,6 +116,11 @@
         document.getElementById("checkr").innerHTML = "new Status " + data.val;
     });
 
+    socket.on('newconnect', function (data) {
+        console.log(data);
+        document.getElementById("checkr").innerHTML = "new Connect " + data.ip;
+    });
+
     
 </script>
 
