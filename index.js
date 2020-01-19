@@ -9,14 +9,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 let serverIp = 'localhost';
+let serverPort = '80';
 
 app.get('/', (req, res) => {
-    res.redirect(`http://${serverIp}`);
+    res.redirect(`http://${serverIp}:${serverPort}`);
 });
+
 
 app.post('/changehostip', (req, res) => {
     serverIp = req.body.ip;
-    console.log(serverIp)
+    serverPort = req.body.port;
+    // console.log(serverIp)
     res.send("ok");
 });
 
