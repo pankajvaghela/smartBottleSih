@@ -1,0 +1,140 @@
+/*
+Diary Heading : font-family: 'Literata', serif;
+Diary Entry   : font-family: 'Source Sans Pro', sans-serif;
+Nav Items     : font-family: 'Roboto Mono', monospace;
+Brand:        : font-family: 'Quicksand', sans-serif; */
+
+.navWhl {
+    padding: 0;
+  }
+  
+  .brnd {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2em;
+    margin-left: 8%;
+  }
+  
+  .navbox {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.2em;
+    margin: 0 8%;
+  }
+  
+  .navIt {
+    margin: 0 25px;
+  }
+
+  .prblmStmnt {
+      margin: 3% 0;
+      font-size: 3.2em;
+      text-align: center;
+  }
+  
+.wardGrid {
+  align-self: center;
+  width: 90%;
+  margin: 2% auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+  .bedBox {
+    border: 2.5px solid #000;
+    border-radius: 2%;
+    text-align: center;
+    width: 28%;
+    padding: 4% 5%;
+    margin: 2%;
+    box-shadow: px 2px rgba(0,0,0,0.3);
+  }
+  
+  .bedBox:nth-child(odd) {
+    background-color: rgb(50, 138, 47);
+    color: rgb(231, 206, 62);
+  }
+  
+  
+  .bedNo h2{  
+    font-size: 2.5rem;
+    font-family: 'Literata', serif;
+  }
+  
+  .patientDet {
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: justify;
+  }
+
+  .patientDet p{
+    text-align: center;
+    font-size: 2.7em;
+  }
+
+  .patientDet:hover {
+    cursor: grab;
+  }
+  
+  .wardBox {
+    border: 0.5px solid #000;
+    border-radius: 2%;
+    text-align: center;
+    width: 30%;
+    padding: 7% 5%;
+    margin: 1.5%;
+
+  }
+  
+  .wardBox:nth-child(odd) {
+    text-decoration: none;
+    background-color: rgb(16, 188, 239);
+    color: rgb(255, 255, 255);
+  }
+  
+  
+  .wardNo h2{ 
+    text-decoration: none;
+    font-size: 2.5rem;
+    font-family: 'Literata', serif;
+  }
+
+  .devTitle {
+    width: 12%;
+    margin: auto;
+    text-align: center;
+    font-size: 2.3em;
+    border-bottom: 2px solid black;
+  }
+
+  .devCard {
+    border: 1.5px solid #000;
+    border-radius: 2%;
+    text-align: center;
+    width: 29%;
+    padding: 2% 5%;
+    margin: 2%;
+    box-shadow: 2px 4px rgba(0,0,0,0.3);
+  }
+
+  .devName{
+    border-bottom: 2px solid rgb(54, 54, 54);
+    margin-bottom: 25px;
+    margin-top: -20px;
+  }
+
+  .devName h3{
+    font-size: 2.2em;
+  }
+
+  .det h4{
+    margin: 10px 0;;
+  }
+  
+  .footer {
+    color: white;
+    text-align: center;
+    padding: 0;
+  }
+  
+  .footer p {
+    margin: 5px;
+  }
+  
