@@ -2,6 +2,7 @@ import path from 'path';
 import app from './config/express';
 import routes from './routes/index.route';
 import dirs from './config/directory';
+const url = require('url');  
 
 import {sendSckt, addScktListener} from './sckt';
 var http = require('http')
@@ -156,9 +157,10 @@ import Axios from 'axios';
 
 // Landing page
 app.get('/', (req, res) => {
+  let wardId = 0;
+  if(req.query.id) wardId = req.query.id;
 
-  res.render('contents/ward', {patient : patient[0], res});
-
+  res.render('contents/ward', {patient : patient[wardId], res});
   // res.render('contents/home' , {res});
   // res.sendFile(path.join(dirs.assetsDir, 'index2.html'));
 });
@@ -168,7 +170,14 @@ app.get('/apic', (req, res) => {
 });
 
 app.get("/wardno\*", function(req, res){
-  res.redirect('/');
+  res.redirect(url.format({
+    pathname:"/",
+    query:req.query,
+  }));
+
+
+  // res.redirect('/');
+  // res.redirect('/?ward='+res.query.id);
   // res.render('contents/ward', {patient : patient[req.query.id], res});
 });
 
