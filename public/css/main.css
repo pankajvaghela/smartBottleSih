@@ -48,11 +48,11 @@ Brand:        : font-family: 'Quicksand', sans-serif; */
     box-shadow: px 2px rgba(0,0,0,0.3);
   }
   
-  .bedBox:nth-child(odd) {
+  /* .bedBox:nth-child(odd) {
     background-color: rgb(50, 138, 47);
     color: rgb(231, 206, 62);
   }
-  
+   */
   
   .bedNo h2{  
     font-size: 2.5rem;
