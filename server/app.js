@@ -4,7 +4,6 @@ import routes from './routes/index.route';
 import dirs from './config/directory';
 
 import {sendSckt, addScktListener} from './sckt';
-
 var server = require('http').Server(app);
 var io = require('socket.io')(server, { origins: '*:*'});
 
@@ -15,21 +14,24 @@ var io = require('socket.io')(server, { origins: '*:*'});
 import sckt from './sckt';
 import { EVENTS } from './nodesManager';
 import eventBus from './eventBus';
+import Axios from 'axios';
 
 // if (process.env.NODE_ENV === 'development') {
-//     const compiler = webpack(webpackConfig);
-//     app.use(webpackDevMiddleware(compiler, {noInfo: true, publicPath: webpackConfig.output.publicPath}));
-//     app.use(webpackHotMiddleware(compiler));
-// }
+  //     const compiler = webpack(webpackConfig);
+  //     app.use(webpackDevMiddleware(compiler, {noInfo: true, publicPath: webpackConfig.output.publicPath}));
+  //     app.use(webpackHotMiddleware(compiler));
+  // }
+  
+  // app.get('/', (req, res) => res.send('Hello World I am heree!'))
 
-// app.get('/', (req, res) => res.send('Hello World I am heree!'))
-
-// Router
-// app.use('/api', routes);
-
-var patient = [
-  [
-  ['01', '2111'],
+  // Router
+  // app.use('/api', routes);
+  var ip = require("ip");
+  var myIP = ip.address();
+  
+  var patient = [
+    [
+      ['01', '2111'],
   ['02', '2112'],
   ['03', '2113'],
   ['04', '2114'],
@@ -172,6 +174,19 @@ app.post('/data', (req, res) => {
 
 server.listen(app.get('port'), app.get('host'), () => {
     console.log(`Server running at http://${app.get('host')}:${app.get('port')}`);
+    
+    try{
+      
+      // Axios.post("https://sbsih.herokuapp.com/changehostip", {
+      //   ip: myIP,
+      //   port
+      // });
+    }
+    catch(err){
+      console.error("GG", err);
+    }
+
+
 });
 // WARNING: app.listen(80) will NOT work here!
 
@@ -222,9 +237,8 @@ io.on('connection', function (socket) {
 });
 
 
-var ip = require("ip");
-var a = ip.address();
-console.log("private ip address", a);
+
+console.log("private ip address", myIP);
 
 
 export default app;
