@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node -r esm server/app.js",
-    "startn": "nodemon -r esm server/app.js",
+    "start": "node -r esm index.js",
+    "startn": "nodemon -r esm index.js",
     "startb": "babel-node server/app.js",
     "clean": "rimraf node_modules && rimraf dist && npm install",
     "lint": "eslint client server; exit 0"
@@ -14,21 +14,21 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.0",
+
     "body-parser": "^1.19.0",
-    "compression": "^1.7.4",
-    "cors": "^2.8.5",
+
+
     "dotenv": "^8.2.0",
-    "ejs": "^3.0.1",
+
     "esm": "^3.2.25",
     "events": "^3.1.0",
     "express": "^5.0.0-alpha.7",
-    "helmet": "^3.21.2",
+
     "ip": "^1.1.5",
-    "joi": "^14.3.1",
+
     "js-event-bus": "^1.0.0",
     "method-override": "^3.0.0",
-    "morgan": "^1.9.1",
+
     "path": "^0.12.7",
     "socket.io": "^2.3.0",
     "socket.io-client": "^2.3.0"
